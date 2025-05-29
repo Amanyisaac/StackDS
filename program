@@ -1,0 +1,51 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataStrutures.StackDS
+{
+
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+             StackDS stack = new StackDS();
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Enter item to push : ");
+                int item = Convert.ToInt32(Console.ReadLine());
+                stack.push(item);
+                stack.display();
+            }
+             Console.WriteLine("Stack elements:");
+            stack.display();
+
+             stack.pop();
+            Console.WriteLine("Stack after pop:");
+            stack.display();
+
+            Console.WriteLine("Top element: " + stack.peek());
+
+            Console.WriteLine("Count of elements in the stack: " + stack.size());
+        
+             Console.WriteLine("Enter element to search: ");
+            int searchElement = Convert.ToInt32(Console.ReadLine());
+            if (stack.search(searchElement))
+            {
+                Console.WriteLine("Element found in the stack.");
+            }
+            else
+            {
+                Console.WriteLine("Element not found in the stack.");
+            }
+
+
+
+        }
+    }
+}
+
